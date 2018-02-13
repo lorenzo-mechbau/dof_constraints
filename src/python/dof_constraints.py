@@ -162,6 +162,9 @@ problem.SolversCreateStart()
 problem.SolverGet([iron.ControlLoopIdentifiers.NODE], 1, nonLinearSolver)
 nonLinearSolver.outputType = iron.SolverOutputTypes.PROGRESS
 nonLinearSolver.NewtonJacobianCalculationTypeSet(iron.JacobianCalculationTypes.FD)
+nonLinearSolver.NewtonAbsoluteToleranceSet(1e-14)
+nonLinearSolver.NewtonSolutionToleranceSet(1e-14)
+nonLinearSolver.NewtonRelativeToleranceSet(1e-14)
 nonLinearSolver.NewtonLinearSolverGet(linearSolver)
 linearSolver.linearType = iron.LinearSolverTypes.DIRECT
 problem.SolversCreateFinish()
