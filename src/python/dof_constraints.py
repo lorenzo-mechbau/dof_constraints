@@ -220,8 +220,10 @@ solverEquations.BoundaryConditionsCreateFinish()
 problem.Solve()
 
 # Export results
+if not os.path.exists('./results'):
+    os.makedirs('./results')
 fields = iron.Fields()
 fields.CreateRegion(region)
-fields.NodesExport("./Cantilever", "FORTRAN")
-fields.ElementsExport("./Cantilever", "FORTRAN")
+fields.NodesExport("./results/Cantilever", "FORTRAN")
+fields.ElementsExport("./results/Cantilever", "FORTRAN")
 fields.Finalise()
