@@ -82,7 +82,7 @@ decomposition.CreateFinish()
 # Create a field for the geometry
 geometricField = iron.Field()
 geometricField.CreateStart(geometricFieldUserNumber, region)
-geometricField.MeshDecompositionSet(decomposition)
+geometricField.DecompositionSet(decomposition)
 geometricField.TypeSet(iron.FieldTypes.GEOMETRIC)
 geometricField.VariableLabelSet(iron.FieldVariableTypes.U, "Geometry")
 geometricField.CreateFinish()
